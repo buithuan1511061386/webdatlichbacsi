@@ -130,5 +130,5 @@ class DoctortimeController extends Controller
      $data->delete();
      return redirect('admin/doctortime/list')->with('status','Xóa thành công');
     }
-
+}
 ?>
