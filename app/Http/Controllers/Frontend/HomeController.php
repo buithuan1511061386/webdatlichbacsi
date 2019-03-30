@@ -33,6 +33,14 @@ class HomeController extends Controller
         $typeofnews= Typeofnews::all();
         return view('frontend.master.home',compact('region','hospital','department','user', 'typeofnews'));
     }
+	public function about()
+    {
+        $region= Region::all();
+        $hospital= Hospital::all();
+        $department= Department::all();
+        $typeofnews= Typeofnews::all();
+        return view('frontend.home.about',compact('region','hospital','department','typeofnews'));
+    }
 }
 
 ?>
