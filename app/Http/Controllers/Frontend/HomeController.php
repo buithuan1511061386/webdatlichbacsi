@@ -87,6 +87,16 @@ class HomeController extends Controller
 
         return view('frontend.home.hospitallist',compact('region','hospital','department','user','request','typeofnews'));
     }
+	     public function departmentlist(Request $request)
+    {
+        $region= Region::all();
+        $hospital= Hospital::all();
+        $department= Department::all();
+        $typeofnews= Typeofnews::all();
+        $user = User::where('user_level_id',2)->where('department_id',$request->id)->paginate(2);
+
+        return view('frontend.home.departmentlist',compact('region','hospital','department','user','request','typeofnews'));
+    }
 }
 
 ?>
