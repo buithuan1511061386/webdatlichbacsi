@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
@@ -48,6 +48,15 @@ class HomeController extends Controller
         $department= Department::all();
         $typeofnews= Typeofnews::all();
         return view('frontend.home.gallery',compact('region','hospital','department','typeofnews'));
+    }
+        public function newlist(Request $request)
+    {
+        $region= Region::all();
+        $hospital= Hospital::all();
+        $department= Department::all();
+        $typeofnews = Typeofnews::all();
+        $news = News::where('typeofnews_id',$request->id)->paginate(2);
+        return view('frontend.home.newlist',compact('region','hospital','department','user','request','typeofnews','news'));
     }
 }
 
