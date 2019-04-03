@@ -150,6 +150,7 @@ class HomeController extends Controller
         $user = User::where('user_level_id',2)->get();
         $typeofnews= Typeofnews::all();
         return view('frontend.home.newsdetail',compact('data','region','hospital','department','user','doctortime', 'typeofnews'));
+
     }
 
 
@@ -160,6 +161,9 @@ class HomeController extends Controller
         $department= Department::all();
         $typeofnews= Typeofnews::all();
         return view('frontend.home.departments',compact('region','hospital','department','typeofnews'));
+
+
+
     }
 
 
