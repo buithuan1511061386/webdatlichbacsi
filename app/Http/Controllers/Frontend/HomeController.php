@@ -151,6 +151,7 @@ class HomeController extends Controller
         return view('frontend.home.newsdetail',compact('data','region','hospital','department','user','doctortime', 'typeofnews'));
     }
 
+
 }
 
 ?>
