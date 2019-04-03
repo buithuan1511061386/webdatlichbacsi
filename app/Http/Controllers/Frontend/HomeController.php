@@ -139,6 +139,7 @@ class HomeController extends Controller
         $times = array_merge($diff1,$diff2);
         return view('frontend.home.doctordetail',compact('data','region','hospital','department','user','doctortime', 'typeofnews','times'));
     }
+
 	    public function detail($id)
     {
         $data = News::find($id);
@@ -149,6 +150,16 @@ class HomeController extends Controller
         $user = User::where('user_level_id',2)->get();
         $typeofnews= Typeofnews::all();
         return view('frontend.home.newsdetail',compact('data','region','hospital','department','user','doctortime', 'typeofnews'));
+    }
+
+
+            public function department()
+    {
+        $region= Region::all();
+        $hospital= Hospital::all();
+        $department= Department::all();
+        $typeofnews= Typeofnews::all();
+        return view('frontend.home.departments',compact('region','hospital','department','typeofnews'));
     }
 
 
